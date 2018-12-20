@@ -15,7 +15,7 @@ you might need a git hook helper to do that:
 * add content with your favourite editor to this file, e.g. `$ gedit .git/hooks/prepare-commit-msg`:
     ```bash
     #!/bin/sh
-    ORIG_MSG_FILE="$1"                   # GRab the current template
+    ORIG_MSG_FILE="$1"                   # Grab the current template
     TMP=`mktemp msg-XXXXX --tmpdir="."`  # Create a temp file
     trap "rm -f $TMP" exit               # Remove temp file on exit
     
@@ -69,6 +69,56 @@ in every new commit message useful:
     #    Can use multiple lines with "-" for bullet points in body
     # --------------------
     ``` 
+    
+    or (based on [GitCommitEmoji|https://gist.github.com/parmentf/035de27d6ed1dce0b36a] ):
+    
+    **IMPORTANT**: table column lengths are optimised for Mac iTerm with Monaco 14pt font, so at your terminal configuration you might have an issue with equal columns (emojis don't know how to length properly ;) )
+    
+    ```
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Initial commit                 | Version tag                    | New feature                    |
+    # | 🎉 :tada:                      | 🔖 :bookmark:                  | ✨ :sparkles:                  |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Bugfix                         | Metadata                       | Documentation                  |
+    # | 🐛 :bug:                       | 📇 :card_index:                | 📚 :books:                     |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Documenting source code        | Performance                    | Cosmetic                       |
+    # | 💡 :bulb:                      | 🐎 :racehorse:                 | 💄 :lipstick:                  |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Tests                          | Adding a test                  | General update                 |
+    # | 🚨 :rotating_light:            | ✅ :white_check_mark:          | ⚡️ :zap:                       |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Improve format/structure       | Refactor code                  | Removing code/files            |
+    # | 🎨 :art:                       | 🔨 :hammer:                    | 🔥 :fire:                      |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Continuous Integration         | Security                       | Upgrading dependencies         |
+    # | 💚 :green_heart:               | 🔒 :lock:                      | ⬆️  :arrow_up:                  |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Downgrading dependencies       | Lint                           | Translation                    |
+    # | ⬇️ :arrow_down:                 | 👕 :shirt:                     | 👽 :alien:                     |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Text                           | Critical hotfix                | Deploying stuff                |
+    # | 📝 :pencil:                    | 🚑 :ambulance:                 | 🚀 :rocket:                    |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Fixing on MacOS                | Fixing on Linux                | Fixing on Windows              |
+    # | 🍎 :apple:                     | 🐧 :penguin:                   | 🏁 :checkered_flag:            |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Work in progress               | Adding CI build system         | Analytics or tracking code     |
+    # | 🚧 :construction:              | 👷 :construction_worker:       | 📈 :chart_with_upwards_trend:  |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Removing a dependency          | Adding a dependency            | Docker                         |
+    # | ➖ :heavy_minus_sign:          | ➕ :heavy_plus_sign:           | 🐳 :whale:                     |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Configuration files            | Package.json in JS             | Merging branches               |
+    # | 🔧 :wrench:                    | 📦 :package:                   | 🔀 :twisted_rightwards_arrows: |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Bad code / need improv.        | Reverting changes              | Breaking changes               |
+    # | 💩 :hankey:                    | ⏪ :rewind:                    | 💥 :boom:                      |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |
+    # | Code review changes            | Accessibility                  | Move/rename repository         |
+    # | 👌 :ok_hand:                   | ♿️ :wheelchair:                | 🚚 :truck:                     |
+    # | ------------------------------ | ------------------------------ | ------------------------------ |  
+    ```
     
 * inform git that you want to use it as your main commit template:
     ```bash
