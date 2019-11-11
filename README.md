@@ -2,7 +2,7 @@
 
 ### First line of new commit from last commit
 
-**IMPORTANT**: Linux/macOS only
+**IMPORTANT**: Linux only
 
 If you're using for every commit the same header (e.g. with current task name, like `BSD-123 - Change in ABC`)
 you might need a git hook helper to do that:
